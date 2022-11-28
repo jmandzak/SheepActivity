@@ -34,8 +34,8 @@ def get_out_file_name(filename, seconds):
 
     hour = hour % 12
 
-    left_string = f'{left_sheep}/{full_date} {hour:02}:{seconds/60}:{seconds%60} {am_pm}.png'
-    right_string = f'{right_sheep}/{full_date} {hour:02}:{seconds/60}:{seconds%60} {am_pm}.png'
+    left_string = f'{left_sheep}/{full_date} {hour:02}:{seconds/60:02}:{seconds%60:02} {am_pm}.png'
+    right_string = f'{right_sheep}/{full_date} {hour:02}:{seconds/60:02}:{seconds%60:02} {am_pm}.png'
 
     return left_string, right_string
 
@@ -79,8 +79,8 @@ def main():
                 filename_left, filename_right = get_out_file_name(filename, seconds)
 
                 # IF YOU WANT TO WRITE TO A SPECIFIC FOLDER NOT JUST IN PC
-                # filename_left = 'directory + '/' + 'output/' + filename_left
-                # filename_right = 'directory + '/' + 'output/' + filename_right
+                # filename_left = directory + '/' + 'output/' + filename_left
+                # filename_right = directory + '/' + 'output/' + filename_right
 
                 cv2.imwrite(filename_left, left_image)
                 cv2.imwrite(filename_right, right_image)
