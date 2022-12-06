@@ -1,0 +1,2 @@
+Predicted Class: 0
+Actual Class:    0
